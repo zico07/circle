@@ -1,0 +1,88 @@
+<% extend 'layout.ect' %>
+<% block 'scripts' : %>
+<script type="text/javascript">
+$(document).ready(function() {
+ 
+    $('#calendar').fullCalendar({
+        defaultDate: '2014-09-12',
+        editable: true,
+        events: [
+            {
+                title: 'All Day Event',
+                start: '2014-09-01'
+            },
+            {
+                title: 'Long Event',
+                start: '2014-09-07',
+                end: '2014-09-10'
+            },
+            {
+                id: 999,
+                title: 'Repeating Event',
+                start: '2014-09-09T16:00:00'
+            },
+            {
+                id: 999,
+                title: 'Repeating Event',
+                start: '2014-09-16T16:00:00'
+            },
+            {
+                title: 'Conference',
+                start: '2014-09-11',
+                end: '2014-09-13'
+            },
+            {
+                title: 'Meeting',
+                start: '2014-09-12T10:30:00',
+                end: '2014-09-12T12:30:00'
+            },
+            {
+                title: 'Lunch',
+                start: '2014-09-12T12:00:00'
+            },
+            {
+                title: 'Meeting',
+                start: '2014-09-12T14:30:00'
+            },
+            {
+                title: 'Happy Hour',
+                start: '2014-09-12T17:30:00'
+            },
+            {
+                title: 'Dinner',
+                start: '2014-09-12T20:00:00'
+            },
+            {
+                title: 'Birthday Party',
+                start: '2014-09-13T07:00:00'
+            },
+            {
+                title: 'Click for Google',
+                url: 'http://google.com/',
+                start: '2014-09-28'
+            }
+        ]
+    });
+     
+});
+</script>
+<% end %>
+<h1>Circle!</h1>
+<div class="btn-group" style="margin-bottom:30px;">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+    <span class="glyphicon glyphicon-align-left" aria-hidden="true"> <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li><a href="#">共有</a></li>
+    <li><a href="/schedule">スケジュール</a></li>
+    <li><a href="/hello">本部からのお知らせ</a></li>
+    <li class="divider"></li>
+    <li><a href="#">ログアウト</a></li>
+  </ul>
+</div>
+
+<div>
+<div id="calendar" style="background-color:#fff;padding: 20px 20px 20px 20px;"></div>
+</div>
+
+  
