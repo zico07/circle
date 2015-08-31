@@ -9,8 +9,9 @@ var ECT = require('ect');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var helo = require('./routes/helo');
-var hello = require('./routes/hello');
+var info = require('./routes/info');
 var schedule = require('./routes/schedule');
+var share = require('./routes/share');
 
 var app = express();
 app.engine('ect', ECT({ watch: true, root: __dirname + '/views', ext: '.ect' }).render);
@@ -31,8 +32,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/helo', helo);
-app.use('/hello', hello);
+app.use('/info', info);
 app.use('/schedule', schedule);
+app.use('/share', share);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

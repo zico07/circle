@@ -67,15 +67,23 @@ $(document).ready(function() {
 });
 </script>
 <% end %>
-<h1>Circle!</h1>
+<div class="container-fluid">
+        <div class="navbar-header">
+          <h1>Circle!</h1>
+        </div>
+        <div class="collapse navbar-collapse">        	
+          <p class="navbar-text navbar-right"><img src="images/person.jpg" alt="..." class="img-circle profile_img" style="max-width:40px;">
+          <a href="#" class="navbar-link">齋 洋行</a></p>
+        </div>
+</div>
 <div class="btn-group" style="margin-bottom:30px;">
   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-    <span class="glyphicon glyphicon-align-left" aria-hidden="true"> <span class="caret"></span>
+    <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"> <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" role="menu">
-    <li><a href="#">共有</a></li>
+    <li><a href="/share">共有</a></li>
     <li><a href="/schedule">スケジュール</a></li>
-    <li><a href="/hello">本部からのお知らせ</a></li>
+    <li><a href="/info">本部からのお知らせ</a></li>
     <li class="divider"></li>
     <li><a href="#">ログアウト</a></li>
   </ul>
