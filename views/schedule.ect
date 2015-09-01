@@ -1,8 +1,40 @@
 <% extend 'layout.ect' %>
+<% block 'csss' : %>
+<style type="text/css">
+.badge-red{
+  background-color: #b94a48;
+}
+.fc-calendar-container {
+	height: 700px;
+	width: 100%;
+
+}
+</style>
+<% end %>
 <% block 'scripts' : %>
 <script type="text/javascript">
-$(document).ready(function() {
- 
+$(function() {
+
+				$( '#calendar' ).calendario( {
+						onDayClick : function( $el, $contentEl, dateProperties ) {
+
+							for( var key in dateProperties ) {
+								console.log( key + ' = ' + dateProperties[ key ] );
+							}
+
+						},
+						caldata : codropsEvents
+					} ),
+					$month = $( '#custom-month' ).html( cal.getMonthName() ),
+					$year = $( '#custom-year' ).html( cal.getYear() );
+
+
+				function updateMonthYear() {				
+					$month.html( cal.getMonthName() );
+					$year.html( cal.getYear() );
+				}
+
+ /*
     $('#calendar').fullCalendar({
         defaultDate: '2014-09-12',
         editable: true,
@@ -62,35 +94,45 @@ $(document).ready(function() {
                 start: '2014-09-28'
             }
         ]
-    });
-     
+    });*/
+     //$(".btn-pref .btn").click(function () {
+    //$(".btn-pref .btn").removeClass("btn-primary").addClass("btn-default");
+    // $(".tab").addClass("active"); // instead of this do the below 
+    //$(this).removeClass("btn-default").addClass("btn-primary");   */
+//});
 });
 </script>
 <% end %>
-<div class="container-fluid">
-        <div class="navbar-header">
-          <h1>Circle!</h1>
-        </div>
-        <div class="collapse navbar-collapse">        	
-          <p class="navbar-text navbar-right"><img src="images/person.jpg" alt="..." class="img-circle profile_img" style="max-width:40px;">
-          <a href="#" class="navbar-link">齋 洋行</a></p>
-        </div>
-</div>
-<div class="btn-group" style="margin-bottom:30px;">
-  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-    <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"> <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" role="menu">
-    <li><a href="/share">共有</a></li>
-    <li><a href="/schedule">スケジュール</a></li>
-    <li><a href="/info">本部からのお知らせ</a></li>
-    <li class="divider"></li>
-    <li><a href="#">ログアウト</a></li>
-  </ul>
+<nav class="navbar navbar-default">
+	<div class="row">
+		<div class="col-md-8">
+			 <a class="navbar-brand" href="#">Circle!</a>
+		</div>
+		<div class="col-md-4">
+			<a href="#" class="pull-right" style="margin-top:10px;margin-right:10px;"><i class="fa fa-comment fa-2x"></i></a>
+		</div>
+	</div>
+</nav>
+
+<div class="btn-group btn-group-justified btn-group-lg">
+    <a class="btn btn-default" href="/share"><i class="fa fa-comments"></i><span class="hidden-xs">共有</span></a>
+    <a class="btn btn-default" href="/schedule"><i class="fa fa-calendar"></i><span class="hidden-xs">スケジュール</span></a>
+    <a class="btn btn-default" href="/info"><i class="fa fa-info"></i><span class="hidden-xs">お知らせ</span><span class="label badge-red" style="text-shadow:none;margin-left:5px;font-size:10px;">New</span></a>
+    <a class="btn btn-default" href="#"><i class="fa fa-user"></i><span class="hidden-xs">アカウント</span></a>
 </div>
 
-<div>
-<div id="calendar" style="background-color:#fff;padding: 20px 20px 20px 20px;"></div>
+
+<div style="margin-top:10px;">
+    <!--<div id="calendar" style="background-color:#fff;padding: 20px 20px 20px 20px;"></div>-->
+
+<div class="container">	
+
+			<div class="custom-calendar-wrap custom-calendar-full">
+				<div id="calendar" class="fc-calendar-container" style="padding: 20px 20px 20px 20px;"></div>
+			</div>
+		</div><!-- /container -->
+
+
 </div>
 
   
