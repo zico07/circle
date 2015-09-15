@@ -12,6 +12,7 @@ var helo = require('./routes/helo');
 var info = require('./routes/info');
 var schedule = require('./routes/schedule');
 var share = require('./routes/share');
+var dialog = require('./routes/dialog');
 
 var app = express();
 app.engine('ect', ECT({ watch: true, root: __dirname + '/views', ext: '.ect' }).render);
@@ -35,6 +36,7 @@ app.use('/helo', helo);
 app.use('/info', info);
 app.use('/schedule', schedule);
 app.use('/share', share);
+app.use('/dialog', dialog);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

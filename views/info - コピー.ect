@@ -1,6 +1,31 @@
 <% extend 'layout.ect' %>
 <% block 'csss' : %>
+<style type="text/css">
+.navbar .navbar-inner{padding:0}.navbar .nav{margin:0;display:table;width:100%}
+.navbar .nav li{display:table-cell;float:none}
+.navbar .nav li a{font-weight:bold;text-align:center;border-left:1px solid rgba(255,255,255,0.75);border-right:1px solid rgba(0,0,0,0.1)}
+.navbar .nav li:last-child a{border-right:0;border-radius:0 3px 3px 0}
+.badge-red{
+  background-color: #b94a48;
+}
+</style>
 <% end %>
+<nav class="navbar navbar-default">
+	<div class="row">
+		<div class="col-md-8">
+			 <a class="navbar-brand" href="#">Circle!</a>
+		</div>
+		<div class="col-md-4">
+			<a href="#" class="pull-right" style="margin-top:10px;margin-right:10px;"><i class="fa fa-comment fa-2x"></i></a>
+		</div>
+	</div>
+</nav>
+<div class="btn-group btn-group-justified btn-group-lg">
+    <a class="btn btn-default" href="/share"><i class="fa fa-comments"></i><span class="hidden-xs">共有</span></a>
+    <a class="btn btn-default" href="/schedule"><i class="fa fa-calendar"></i><span class="hidden-xs">スケジュール</span></a>
+    <a class="btn btn-default" href="/info"><i class="fa fa-info"></i><span class="hidden-xs">お知らせ</span><span class="label badge-red" style="text-shadow:none;margin-left:5px;font-size:10px;">New</span></a>
+    <a class="btn btn-default" href="#"><i class="fa fa-user"></i><span class="hidden-xs">アカウント</span></a>
+</div>
 <div class="row" style="margin-top:10px;">
 	<div class="col-md-12">
 		<div class="panel panel-primary">
@@ -39,4 +64,6 @@
 		</div>
 	</div>
 </div>
+</div>
+
   

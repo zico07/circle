@@ -1,0 +1,71 @@
+<% extend 'layout.ect' %>
+<% block 'csss' : %>
+<style type="text/css">
+.badge-red{
+  background-color: #b94a48;
+}
+</style>
+<% end %>
+<% block 'scripts' : %>
+
+<% end %>
+<nav class="navbar navbar-default">
+	<div class="row">
+		<div class="col-md-8">
+			 <a class="navbar-brand" href="#">Circle!</a>
+		</div>
+		<div class="col-md-4">
+			<a href="#" class="pull-right" style="margin-top:10px;margin-right:10px;"><i class="fa fa-comment fa-2x"></i></a>
+		</div>
+	</div>
+</nav>
+<div class="btn-group btn-group-justified btn-group-lg">
+    <a class="btn btn-default" href="/share"><i class="fa fa-comments"></i><span class="hidden-xs">共有</span><font class="visible-xs" size="1">共有</font></a>
+    <a class="btn btn-default" href="/schedule"><i class="fa fa-calendar"></i><span class="hidden-xs">予定</span><font class="visible-xs" size="1">予定</font></a>
+    <a class="btn btn-default" href="/info"><i class="fa fa-info"></i><span class="hidden-xs">お知らせ</span><span class="label badge-red" style="text-shadow:none;margin-left:5px;font-size:10px;">New</span><font class="visible-xs" size="1">お知らせ</font></a>
+    <a class="btn btn-default" href="#"><i class="fa fa-user"></i><span class="hidden-xs">アカウント</span><font class="visible-xs" size="1">アカウント</font></a>
+</div>
+<div class="row" style="margin-top:10px;">
+	<div class="col-md-12">
+		<div class="panel panel-warning">
+			<div class="panel-heading">
+				<img src="images/person.jpg" alt="..." class="img-circle profile_img" style="max-width:50px;">
+				<span>キャンペーンのディスプレイってどうやってますか？</span>				
+			</div>
+			<div class="panel-body">	
+				<p>秋冬物のキャンペーン始まりますがディスプレイがマンネリ化しています。みなさんどんな工夫していますか？</p>
+				<div align="right">
+					<span>2015年8月6日 10:30</span>
+					<a href="#" style="margin-left:10px;"><font color="gray"></a>
+				</div>
+
+				<div class="col-xs-3 col-md-1" style="margin-top:10px;">
+					<img src="images/profile.jpg" alt="..." class="img-circle profile_img" style="max-width:50px;">
+				</div>
+				<div class="col-xs-9 col-md-11" style="margin-top:10px;">
+					<div class="popover right show" style="position:relative; max-width:100%;">
+				    <div class="arrow" style="top:23px;"></div>
+				    <div class="popover-content">
+				        <p>うちの店は去年こんな感じでしたよ。</p>
+				        <div class="row">
+ 							<div class="col-xs-12 col-md-3">
+						        <a class="thumbnail" href="images/disp.jpg" data-lightbox="example-2">
+						        <img class="example-image" src="images/disp.jpg" alt="image-1"/>
+						        </a>
+				        	</div>
+				        </div>
+				        <div align="right">
+					<span>2015年8月6日 13:30</span>
+					<a href="#" style="margin-left:10px;"></a>
+				</div>
+				    </div>
+				</div>
+				</div>
+				<div align="right">
+					<a href="#">返信する</a>
+
+			</div>
+			</div>
+		</div>
+	</div>
+</div>

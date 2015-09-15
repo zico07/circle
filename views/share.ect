@@ -1,71 +1,303 @@
 <% extend 'layout.ect' %>
 <% block 'csss' : %>
 <style type="text/css">
-.badge-red{
-  background-color: #b94a48;
-}
+
 </style>
 <% end %>
 <% block 'scripts' : %>
-
+<script type="text/javascript">
+$(document).ready(function(){
+$(".caption").click(function(){
+	$('#hbtn').trigger("click");
+} );
+});
+    //$('#hbtn').trigger("click");
+</script>
 <% end %>
-<nav class="navbar navbar-default">
-	<div class="row">
-		<div class="col-md-8">
-			 <a class="navbar-brand" href="#">Circle!</a>
+<div class="row">
+	<ul class="nav nav-tabs">
+		<li class="active"><a href="#pill1" data-toggle="pill">自分の店舗</a></li>
+		<li class=""><a href="#pill2" data-toggle="pill">みんなの店舗</a></li>
+	</ul>
+	<div class="tab-content" style="background-color:white;border-style:solid;border-width: 0.5px;border-color: #777;">
+		<div class="tab-pane active" id="pill1">
+			<div style="padding-top:8px;">
+				<nav class="navbar navbar-default">
+					<div class="container-fluid">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+							<form class="navbar-form navbar-left" role="search">								
+								<input type="text" class="form-control" placeholder="キーワード"><br class="visible-xs-block">
+								<input type="text" class="form-control" style="width:60px;display: inline;margin-left:5px;">年
+								<span>　～　</span>
+								<input type="text" class="form-control" style="width:60px;display: inline">年
+
+								<input type="checkbox" name="piyo" value="春" id="checkbox01" />
+								<label for="checkbox01" class="checkbox">春</label>
+								<input type="checkbox" name="piyo" value="夏" id="checkbox02" />
+								<label for="checkbox02" class="checkbox">夏</label><br class="visible-xs-block">
+								<input type="checkbox" name="piyo" value="秋" checked id="checkbox03" />
+								<label for="checkbox03" class="checkbox">秋</label>
+								<input type="checkbox" name="piyo" value="冬" checked id="checkbox04" />
+								<label for="checkbox04" class="checkbox">冬</label><br class="visible-xs-block">
+								<button class="btn btn-info hidden-xs" type="button" style="background-image:none;border:none;">OK</button>
+								<button class="btn btn-info visible-xs" type="button" style="background-image:none;border:none;width:100%;height:40px;"><font size="5">OK</font></button>
+							</form>
+						</div>
+					</div>
+				</nav>
+				<div class="row" >
+					<div class="col-xs-12 col-md-4">
+						<div class="thumbnail">
+					    	<a class="thumbnail" href="images/disp6.jpg" data-lightbox="example-2">
+					    		<img class="example-image" src="images/disp6.jpg" alt="image-1"/>
+					    	</a>
+					    	<div class="caption" style="padding-top:0px;cursor:pointer;">
+					    		<h3>トレンドの赤を前面に</h3>
+					        	<p>正面に赤を置くことでインパクトを出しました。</p>
+					        	<div align="right">
+						    		<span class="label label-default">2015年</span>
+									<span class="label label-default">路面店</span>
+									<span class="label label-warning">秋</span>
+									<span class="label label-warning">冬</span>
+								</div>
+						        <div align="right" style="font-size: 7px;padding-top:5px;">
+									<span>2015年8月6日 13:30</span>
+								</div>
+					    	</div>
+					    </div>
+					</div>
+					<div class="col-xs-12 col-md-4">
+						<div class="thumbnail">
+					    	<a class="thumbnail" href="images/disp7.jpg" data-lightbox="example-2">
+					    		<img class="example-image" src="images/disp7.jpg" alt="image-1"/>
+					    	</a>
+					    	<div class="caption" style="padding-top:0px;cursor:pointer;">
+					    		<h3>売れ筋のハットをメインに</h3>
+					        	<p>ハットに合ったコーデにしました。</p>
+					        	<div align="right">
+						    		<span class="label label-default">2015年</span>
+									<span class="label label-default">路面店</span>
+									<span class="label label-warning">冬</span>
+								</div>
+						        <div align="right" style="font-size: 7px;padding-top:5px;">						        	
+									<span>2015年8月6日 13:30</span>
+								</div>
+					    	</div>
+					    </div>
+					</div>
+					<div class="col-xs-12 col-md-4">
+						<div class="thumbnail">
+					    	<a class="thumbnail" href="images/disp.jpg" data-lightbox="example-2">
+					    		<img class="example-image" src="images/disp.jpg" alt="image-1"/>
+					    	</a>
+					    	<div class="caption" style="padding-top:0px;cursor:pointer;">
+					    		<h3>落ち葉で雰囲気UP！</h3>
+					        	<p>今年は落ち葉を引いてみました。</p>
+					        	<div align="right">
+						    		<span class="label label-default">2015年</span>
+									<span class="label label-default">路面店</span>
+									<span class="label label-warning">秋</span>
+								</div>
+						        <div align="right" style="font-size: 7px;padding-top:5px;">						        	
+									<span>2015年8月6日 13:30</span>
+								</div>
+					    	</div>
+					    </div>
+					</div>
+				</div>
+				<div class="row" >
+
+					<div class="col-xs-12 col-md-4">
+						<div class="thumbnail">
+					    	<a class="thumbnail" href="images/disp4.jpg" data-lightbox="example-2">
+					    		<img class="example-image" src="images/disp4.jpg" alt="image-1"/>
+					    	</a>
+					    	<div class="caption" style="padding-top:0px;cursor:pointer;">
+					    		<h3>クールなイメージを</h3>
+					        	<p>冬はやはり黒が人気</p>
+					        	<div align="right">
+						    		<span class="label label-default">2014年</span>
+									<span class="label label-default">路面店</span>
+									<span class="label label-warning">冬</span>
+								</div>
+						        <div align="right" style="font-size: 7px;padding-top:5px;">
+									<span>2015年8月6日 13:30</span>
+								</div>
+					    	</div>
+					    </div>
+					</div>
+				</div>
+			</div>
 		</div>
-		<div class="col-md-4">
-			<a href="#" class="pull-right" style="margin-top:10px;margin-right:10px;"><i class="fa fa-comment fa-2x"></i></a>
+		<div class="tab-pane" id="pill2">
+			<div style="padding-top:8px;">
+				<nav class="navbar navbar-default">
+					<div class="container-fluid">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+							<form class="navbar-form navbar-left" role="search">
+								<input type="text" class="form-control" placeholder="キーワード"/><br class="visible-xs-block">
+								<input type="text" class="form-control" style="width:60px;display: inline;margin-left:5px;"/>年
+								<span>　～　</span>
+								<input type="text" class="form-control" style="width:60px;display: inline"/>年
+
+								<input type="checkbox" name="piyo" value="春" id="checkbox01" />
+								<label for="checkbox01" class="checkbox">春</label>
+								<input type="checkbox" name="piyo" value="夏" id="checkbox02" />
+								<label for="checkbox02" class="checkbox">夏</label><br class="visible-xs-block">
+								<input type="checkbox" name="piyo" value="秋" checked id="checkbox03" />
+								<label for="checkbox03" class="checkbox">秋</label>
+								<input type="checkbox" name="piyo" value="冬" checked id="checkbox04" />
+								<label for="checkbox04" class="checkbox">冬</label><br class="visible-xs-block">
+								<button class="btn btn-info hidden-xs" type="button" style="background-image:none;border:none;">OK</button>
+								<button class="btn btn-info visible-xs" type="button" style="background-image:none;border:none;width:100%;height:40px;"><font size="5">OK</font></button>
+							</form>
+						</div>
+					</div>
+				</nav>
+				<div class="row" >
+					<div class="col-xs-12 col-md-3">
+						<div class="thumbnail">
+					    	<a class="thumbnail" href="images/disp2.jpg" data-lightbox="example-2">
+					    		<img class="example-image" src="images/disp2.jpg" alt="image-1"/>
+					    	</a>
+					    	<div class="caption" style="padding-top:0px;cursor:pointer;">
+					    		<h3>秋山</h3>
+					        	<p>登山シーズンに向けたディスプレイです。</p>
+					        	<div align="right">
+						    		<span class="label label-default">2014年</span>
+									<span class="label label-default">ショッピングモール</span>
+									<span class="label label-warning">秋</span>
+								</div>
+						        <div align="right" style="font-size: 7px;padding-top:5px;">
+						        	<span>千葉店</span>
+									<span>2015年8月6日 13:30</span>
+								</div>
+					    	</div>
+					    </div>
+					</div>
+					<div class="col-xs-12 col-md-3">
+						<div class="thumbnail">
+					    	<a class="thumbnail" href="images/disp3.jpg" data-lightbox="example-2">
+					    		<img class="example-image" src="images/disp3.jpg" alt="image-1"/>
+					    	</a>
+					    	<div class="caption" style="padding-top:0px;cursor:pointer;">
+					    		<h3>落ち葉で雰囲気UP！</h3>
+					        	<p>今年は落ち葉を引いてみました。</p>
+					        	<div align="right">
+						    		<span class="label label-default">2015年</span>
+									<span class="label label-default">ショッピングモール</span>
+									<span class="label label-warning">春</span>
+								</div>
+						        <div align="right" style="font-size: 7px;padding-top:5px;">
+						        	<span>立川店</span>
+									<span>2015年8月6日 13:30</span>
+								</div>
+					    	</div>
+					    </div>
+					</div>
+					<div class="col-xs-12 col-md-3">
+						<div class="thumbnail">
+					    	<a class="thumbnail" href="images/disp4.jpg" data-lightbox="example-2">
+					    		<img class="example-image" src="images/disp4.jpg" alt="image-1"/>
+					    	</a>
+					    	<div class="caption" style="padding-top:0px;cursor:pointer;">
+					    		<h3>クールなイメージを</h3>
+					        	<p>冬はやはり黒が人気</p>
+					        	<div align="right">
+						    		<span class="label label-default">2015年</span>
+									<span class="label label-default">路面店</span>
+									<span class="label label-warning">冬</span>
+								</div>
+						        <div align="right" style="font-size: 7px;padding-top:5px;">
+						        	<span>川崎店</span>
+									<span>2015年8月6日 13:30</span>
+								</div>
+					    	</div>
+					    </div>
+					</div>
+					<div class="col-xs-12 col-md-3">
+						<div class="thumbnail">
+					    	<a class="thumbnail" href="images/disp.jpg" data-lightbox="example-2">
+					    		<img class="example-image" src="images/disp.jpg" alt="image-1"/>
+					    	</a>
+					    	<div class="caption" style="padding-top:0px;cursor:pointer;">
+					    		<h3>落ち葉で雰囲気UP！</h3>
+					        	<p>今年は落ち葉を引いてみました。</p>
+					        	<div align="right">
+						    		<span class="label label-default">2015年</span>
+									<span class="label label-default">ショッピングモール</span>
+									<span class="label label-warning">秋</span>
+								</div>
+						        <div align="right" style="font-size: 7px;padding-top:5px;">
+						        	<span>横浜店</span>
+									<span>2015年8月6日 13:30</span>
+								</div>
+					    	</div>
+					    </div>
+					</div>
+				</div>
+				<div class="row" >
+					<div class="col-xs-12 col-md-3">
+						<div class="thumbnail">
+					    	<a class="thumbnail" href="images/disp.jpg" data-lightbox="example-2">
+					    		<img class="example-image" src="images/disp.jpg" alt="image-1"/>
+					    	</a>
+					    	<div class="caption" style="padding-top:0px;cursor:pointer;">
+					    		<h3>落ち葉で雰囲気UP！</h3>
+					        	<p>今年は落ち葉を引いてみました。</p>
+					        	<div align="right">
+						    		<span class="label label-default">2015年</span>
+									<span class="label label-default">ショッピングモール</span>
+									<span class="label label-warning">秋</span>
+								</div>
+						        <div align="right" style="font-size: 7px;padding-top:5px;">
+						        	<span>銀座店</span>
+									<span>2015年8月6日 13:30</span>
+								</div>
+					    	</div>
+					    </div>
+					</div>
+				</div>
+				<div class="row" >
+					<div class="col-xs-12 col-md-3">
+						<div class="thumbnail">
+					    	<a class="thumbnail" href="images/disp.jpg" data-lightbox="example-2">
+					    		<img class="example-image" src="images/disp.jpg" alt="image-1"/>
+					    	</a>
+					    	<div class="caption" style="padding-top:0px;cursor:pointer;">
+					    		<h3>落ち葉で雰囲気UP！</h3>
+					        	<p>今年は落ち葉を引いてみました。</p>
+					        	<div align="right">
+						    		<span class="label label-default">2015年</span>
+									<span class="label label-default">ショッピングモール</span>
+									<span class="label label-warning">秋</span>
+								</div>
+						        <div align="right" style="font-size: 7px;padding-top:5px;">
+						        	<span>上野店</span>
+									<span>2015年8月6日 13:30</span>
+								</div>
+					    	</div>
+					    </div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
-</nav>
-<div class="btn-group btn-group-justified btn-group-lg">
-    <a class="btn btn-default" href="/share"><i class="fa fa-comments"></i><span class="hidden-xs">共有</span><font class="visible-xs" size="1">共有</font></a>
-    <a class="btn btn-default" href="/schedule"><i class="fa fa-calendar"></i><span class="hidden-xs">予定</span><font class="visible-xs" size="1">予定</font></a>
-    <a class="btn btn-default" href="/info"><i class="fa fa-info"></i><span class="hidden-xs">お知らせ</span><span class="label badge-red" style="text-shadow:none;margin-left:5px;font-size:10px;">New</span><font class="visible-xs" size="1">お知らせ</font></a>
-    <a class="btn btn-default" href="#"><i class="fa fa-user"></i><span class="hidden-xs">アカウント</span><font class="visible-xs" size="1">アカウント</font></a>
 </div>
-<div class="row" style="margin-top:10px;">
-	<div class="col-md-12">
-		<div class="panel panel-warning">
-			<div class="panel-heading">
-				<img src="images/person.jpg" alt="..." class="img-circle profile_img" style="max-width:50px;">
-				<span>キャンペーンのディスプレイってどうやってますか？</span>				
-			</div>
-			<div class="panel-body">	
-				<p>秋冬物のキャンペーン始まりますがディスプレイがマンネリ化しています。みなさんどんな工夫していますか？</p>
-				<div align="right">
-					<span>2015年8月6日 10:30</span>
-					<a href="#" style="margin-left:10px;"><font color="gray"></a>
-				</div>
-
-				<div class="col-xs-3 col-md-1" style="margin-top:10px;">
-					<img src="images/profile.jpg" alt="..." class="img-circle profile_img" style="max-width:50px;">
-				</div>
-				<div class="col-xs-9 col-md-11" style="margin-top:10px;">
-					<div class="popover right show" style="position:relative; max-width:100%;">
-				    <div class="arrow" style="top:23px;"></div>
-				    <div class="popover-content">
-				        <p>うちの店は去年こんな感じでしたよ。</p>
-				        <div class="row">
- 							<div class="col-xs-12 col-md-3">
-						        <a class="thumbnail" href="images/disp.jpg" data-lightbox="example-2">
-						        <img class="example-image" src="images/disp.jpg" alt="image-1"/>
-						        </a>
-				        	</div>
-				        </div>
-				        <div align="right">
-					<span>2015年8月6日 13:30</span>
-					<a href="#" style="margin-left:10px;"></a>
-				</div>
-				    </div>
-				</div>
-				</div>
-				<div align="right">
-					<a href="#">返信する</a>
-
-			</div>
-			</div>
-		</div>
-	</div>
-</div>
+<button id="hbtn" type="submit" style="display:none;"  data-toggle="modal" data-target="#modal-example"/>

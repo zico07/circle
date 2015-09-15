@@ -10,27 +10,205 @@
     
     <link rel='stylesheet' href='/components/calendario/css/calendar.css'/>
     <link rel="stylesheet" type="text/css" href="/components/calendario/css/custom_99.css" />
-    <script type="text/javascript" src="/components/calendario/js/data.js"></script>
+    <script type="text/javascript" src="/components/calen	dario/js/data.js"></script>
     <script src="/components/calendario/js/modernizr.custom.63321.js"></script>
     
     <!--<link rel='stylesheet' href='/components/fullcalendar/dist/fullcalendar.min.css'/>-->
     <link rel="stylesheet" href="/components/lightbox2/dist/css/lightbox.css">
     <link rel="stylesheet" href="/components/font-awesome/css/font-awesome.min.css">
+    <style type="text/css">
+    html,body
+	{
+	font-family:"ヒラギノ角ゴ Pro W3",メイリオ,Osaka,Arial,Verdana
+	,"ＭＳ Ｐゴシック",sans-serif;
+	}
+	
+input[type=radio], input[type=checkbox] {
+  display: none;
+}
+
+.radio, .checkbox {
+  box-sizing: border-box;
+  -webkit-transition: background-color 0.2s linear;
+  transition: background-color 0.2s linear;
+  position: relative;
+  display: inline-block;
+  margin: 0 0 8px 0;
+  padding: 12px 12px 12px 42px;
+  border-radius: 8px;
+  background-color: #f6f7f8;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.radio:hover, .checkbox:hover {
+  background-color: #e2edd7;
+}
+.radio:hover:after, .checkbox:hover:after {
+  border-color: #2AABD2;
+}
+.radio:after, .checkbox:after {
+  -webkit-transition: border-color 0.2s linear;
+  transition: border-color 0.2s linear;
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  display: block;
+  margin-top: -10px;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #bbb;
+  border-radius: 6px;
+  content: '';
+}
+
+.radio:before {
+  -webkit-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  display: block;
+  margin-top: -5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #2AABD2;
+  content: '';
+  opacity: 0;
+}
+input[type=radio]:checked + .radio:before {
+  opacity: 1;
+}
+
+.checkbox:before {
+  -webkit-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+  position: absolute;
+  top: 50%;
+  left: 21px;
+  display: block;
+  margin-top: -7px;
+  width: 5px;
+  height: 9px;
+  border-right: 3px solid #2AABD2;
+  border-bottom: 3px solid #2AABD2;
+  content: '';
+  opacity: 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+input[type=checkbox]:checked + .checkbox:before {
+  opacity: 1;
+}
+</style>
     <% content 'csss' %>
   </head>
-  <body  style="background-color :#DAE3E7;">
-    <div class="container">
-        <% content %>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/share">ディスプレイ共有</a>
     </div>
-    <script src="/components/moment/min/moment.min.js"></script>
-    <script src="/components/jquery/dist/jquery.min.js"></script>
-    <script src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="/components/bootstrap/dist/js/npm.js"></script>    
-    <script src="/components/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
-    <!--<script src="/components/fullcalendar/dist/fullcalendar.min.js"></script>-->
-    <script src="/components/calendario/js/jquery.calendario.js"></script>
- 
-    <!--<script src="/components/fullcalendar/dist/lang/ja.js"></script>-->
-    <% content 'scripts' %>
-  </body>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/share"><i class="fa fa-street-view fa-lg"></i> <span class="sr-only">(current)</span><span class="hidden-lg hidden-md hidden-sm">　共有</span></a></li>
+        <li><a href="/info"><i class="fa fa-bullhorn fa-lg"></i><span class="badge">1</span><span class="hidden-lg hidden-md hidden-sm">　お知らせ</span></a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      	<li class="hidden-xs"><button type="submit" class="btn btn-info" style="margin-top:8px;border:none;"  data-toggle="modal" data-target="#modal-example"><i class="fa fa-paper-plane"></i>　投稿する</button></li>
+        <li><a href="#"><i class="fa fa-user fa-lg"></i><span class="hidden-lg hidden-md hidden-sm">　アカウント</span></a></li>
+        <li class="visible-xs"><button type="submit" class="btn btn-info" style="width:100%;height:40px;"  data-toggle="modal" data-target="#modal-example"><i class="fa fa-paper-plane"></i>　投稿する</button></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<body  style="background-color :#D3CAC1;" >
+	<div class="container">
+	    <% content %>
+	</div>
+	
+	
+<!-- 2.モーダルの配置 -->
+<div class="modal" id="modal-example" tabindex="-1">
+    <div class="modal-dialog">
+
+        <!-- 3.モーダルのコンテンツ -->
+        <div class="modal-content">
+            <!-- 4.モーダルのヘッダ -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <input type="text" class="form-control" placeholder="タイトル"/>
+            </div>
+            <!-- 5.モーダルのボディ -->
+            <div class="modal-body">
+                <textarea class="form-control" rows="3"></textarea>	
+				<input type="file" id="file_input" name="file_input" style="display: none;">
+				<div style="width:100%;float:left;" class="input-group">
+				    <span class="input-group-btn">
+				        <button class="btn btn-default" type="button" onclick="$('#file_input').click();">
+				            <i class="glyphicon glyphicon-folder-open"></i>
+				        </button>
+				    </span>
+				    <input id="dummy_file" type="text" class="form-control" placeholder="ファイルを選択してください" disabled>
+				</div>
+				<div style="clear:both;">
+					<input type="checkbox" name="piyo" value="春" id="checkbox01" />
+					<label for="checkbox01" class="checkbox">春</label>
+					<input type="checkbox" name="piyo" value="夏" id="checkbox02" />
+					<label for="checkbox02" class="checkbox">夏</label><br class="visible-xs-block">
+					<input type="checkbox" name="piyo" value="秋" checked id="checkbox03" />
+					<label for="checkbox03" class="checkbox">秋</label>
+					<input type="checkbox" name="piyo" value="冬" checked id="checkbox04" />
+					<label for="checkbox04" class="checkbox">冬</label>
+				</div>
+				<div>
+					<input type="text" class="form-control" style="width:60px;display: inline;margin-left:5px;">年
+				</div><br/>
+				<div class="dropdown">
+					<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+				    	種別
+				    	<span class="caret"></span>
+				  	</button>
+					<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+						<li><a href="#">路面店</a></li>
+						<li><a href="#">ショッピングモール</a></li>
+					</ul>
+				</div>
+            </div>
+            <!-- 6.モーダルのフッタ -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" style="background-image:none;border:none;">閉じる</button>
+                <button type="button" class="btn btn-primary" style="background-image:none;border:none;">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+	<script src="/components/moment/min/moment.min.js"></script>
+	<script src="/components/jquery/dist/jquery.min.js"></script>
+	<script src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="/components/bootstrap/dist/js/npm.js"></script>    
+	<script src="/components/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+	<!--<script src="/components/fullcalendar/dist/fullcalendar.min.js"></script>-->
+	<script src="/components/calendario/js/jquery.calendario.js"></script>
+
+	<!--<script src="/components/fullcalendar/dist/lang/ja.js"></script>-->
+	<script>
+		$(function(){
+		    $('#file_input').change(function() {
+		        $('#dummy_file').val($(this).val());
+		    });
+		});
+	</script>
+	<% content 'scripts' %>
+</body>
 </html>
